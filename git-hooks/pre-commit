@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if (git status --porcelain | grep -Eq "^([^? ][^? ])"); then
+    echo "Found partially added file. Skipping prettify."
+else
+    mapfile -d "" -t FILES < <(
+        git diff --cached --name-only --diff-filter=d -z || kill $$
+    )
+    npm run prettify
+    git add "${FILES[@]}"
+fi
+
+npm run lint
