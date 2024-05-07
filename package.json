@@ -4,7 +4,16 @@
   "main": "index.js",
   "author": "John Sullivan <john@shmeppy.com> (https://johncs.com)",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint . && prettier --list-different .",
+    "prettify": "prettier --write ."
+  },
   "devDependencies": {
-    "typescript": "^5.4.5"
-  }
+    "@eslint/js": "^9.2.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.8.0"
+  },
+  "type": "module"
 }
