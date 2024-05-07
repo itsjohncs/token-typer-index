@@ -1,0 +1,10 @@
+{
+  "name": "token-typer-index",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "John Sullivan <john@shmeppy.com> (https://johncs.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
