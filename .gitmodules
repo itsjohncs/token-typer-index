@@ -1,0 +1,3 @@
+[submodule "assets/too-many-tokens-dnd"]
+	path = assets/too-many-tokens-dnd
+	url = git@github.com:itsjohncs/too-many-tokens-dnd.git
