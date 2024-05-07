@@ -16,6 +16,6 @@ export default tseslint.config(
         },
     },
     {
-        ignores: ["assets/", "eslint.config.js"]
-    }
+        ignores: ["assets/", "eslint.config.js"],
+    },
 );
