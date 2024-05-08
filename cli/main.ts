@@ -12,13 +12,11 @@ function print(thing: any): void {
 async function main() {
     const index = await buildIndex();
 
-    if (process.argv.length <= 1) {
+    const args = process.argv.slice(2);
+    if (args.length === 0) {
         print(index);
     } else {
-        const plan = createQueryPlan(
-            index.tags,
-            process.argv.slice(1).join(" "),
-        );
+        const plan = createQueryPlan(index.tags, args.join(" "));
         print(plan);
 
         const matched = executeQueryPlan(plan, index.assets);
