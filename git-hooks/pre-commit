@@ -23,10 +23,21 @@ else
         cd "$ROOT_DIR/token-typer-index-builder"
         npm run prettify
     )
+
+    (
+        cd "$ROOT_DIR/token-typer-index-searcher"
+        npm run prettify
+    )
+
     git add "${FILES[@]}"
 fi
 
 (
     cd "$ROOT_DIR/token-typer-index-builder"
+    npm run lint
+)
+
+(
+    cd "$ROOT_DIR/token-typer-index-searcher"
     npm run lint
 )
