@@ -10,7 +10,7 @@
     },
     "dependencies": {
         "fast-glob": "^3.3.2",
-        "token-typer-index-searcher": "^0.1.0"
+        "token-typer-index-searcher": "*"
     },
     "devDependencies": {
         "@eslint/js": "^9.2.0",
