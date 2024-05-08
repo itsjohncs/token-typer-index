@@ -1,10 +1,10 @@
 import Asset from "../Asset";
 import QueryPlan from "../createQueryPlan/QueryPlan";
 
-export default function executeQueryPlan(
+export default function executeQueryPlan<T extends Asset>(
     plan: QueryPlan,
-    assets: Asset[],
-): Asset[] {
+    assets: T[],
+): T[] {
     return assets.filter(function (asset) {
         const needed = new Set(plan.terms);
         for (const term of asset.tags) {
