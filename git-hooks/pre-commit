@@ -2,12 +2,17 @@
 
 set -euo pipefail
 
+mapfile -d "" -t FILES < <(
+    git diff --cached --name-only --diff-filter=d -z || kill $$
+)
+
+if [[ ${#FILES[@]} -eq 0 ]]; then
+    exit 0
+fi
+
 if (git status --porcelain | grep -Eq "^([^? ][^? ])"); then
     echo "Found partially added file. Skipping prettify."
 else
-    mapfile -d "" -t FILES < <(
-        git diff --cached --name-only --diff-filter=d -z || kill $$
-    )
     npm run prettify
     git add "${FILES[@]}"
 fi
