@@ -20,24 +20,14 @@ if (git status --porcelain | grep -Eq "^([^? ][^? ])"); then
     echo "Found partially added file. Skipping prettify."
 else
     (
-        cd "$ROOT_DIR/token-typer-index-builder"
-        npm run prettify
-    )
-
-    (
-        cd "$ROOT_DIR/token-typer-index-searcher"
-        npm run prettify
+        cd "$ROOT_DIR"
+        npm run prettify --workspaces
     )
 
     git add "${FILES[@]}"
 fi
 
 (
-    cd "$ROOT_DIR/token-typer-index-builder"
-    npm run lint
-)
-
-(
-    cd "$ROOT_DIR/token-typer-index-searcher"
-    npm run lint
+    cd "$ROOT_DIR/searcher"
+    npm run lint --workspaces
 )
