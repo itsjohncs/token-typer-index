@@ -8,8 +8,12 @@
         "lint": "eslint . && prettier --list-different .",
         "prettify": "prettier --write ."
     },
+    "dependencies": {
+        "glob": "^10.3.12"
+    },
     "devDependencies": {
         "@eslint/js": "^9.2.0",
+        "@types/glob": "^8.1.0",
         "eslint": "^8.57.0",
         "prettier": "^3.2.5",
         "typescript": "^5.4.5",
