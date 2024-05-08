@@ -20,14 +20,18 @@ if (git status --porcelain | grep -Eq "^([^? ][^? ])"); then
     echo "Found partially added file. Skipping prettify."
 else
     (
-        cd "$ROOT_DIR"
-        npm run prettify --workspaces
+        for DIR in "$ROOT_DIR"/packages/*; do
+            cd "$DIR"
+            npm run prettify
+        done
     )
 
     git add "${FILES[@]}"
 fi
 
 (
-    cd "$ROOT_DIR/searcher"
-    npm run lint --workspaces
+    for DIR in "$ROOT_DIR"/packages/*; do
+        cd "$DIR"
+        npm run lint
+    done
 )

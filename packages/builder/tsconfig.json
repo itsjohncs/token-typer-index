@@ -8,5 +8,5 @@
         "strict": true,
         "skipLibCheck": true
     },
-    "references": [{"path": "./searcher"}]
+    "references": [{"path": "../searcher"}]
 }

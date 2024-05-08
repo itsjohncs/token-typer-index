@@ -1,6 +1,6 @@
 import util from "node:util";
 
-import {buildIndex} from "../src/index";
+import { buildIndex } from "token-typer-index-builder";
 import {createQueryPlan, executeQueryPlan} from "token-typer-index-searcher";
 
 function print(thing: any): void {

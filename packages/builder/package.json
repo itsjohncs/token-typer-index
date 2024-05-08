@@ -21,6 +21,6 @@
     },
     "type": "module",
     "workspaces": [
-        "searcher"
+        "../searcher"
     ]
 }

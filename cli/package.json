@@ -1,3 +1,8 @@
 {
-    "type": "module"
+    "type": "module",
+    "dependencies": {
+        "token-typer-index-searcher": "*",
+        "token-typer-index-builder": "*"
+    },
+    "workspaces": ["../packages/builder", "../packages/searcher"]
 }
