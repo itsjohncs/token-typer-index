@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "ES6",
         "downlevelIteration": true,
-        "module": "ESNext",
+        "module": "NodeNext",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
