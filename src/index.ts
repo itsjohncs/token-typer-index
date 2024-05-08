@@ -1,5 +1,5 @@
 import type {Asset, Tag} from "token-typer-index-searcher";
-import {buildIndex as buildTooManyTokensIndex} from "./indexers/tooManyTokens.js";
+import {buildIndex as buildTooManyTokensIndex} from "./indexers/tooManyTokens";
 
 interface Index {
     assets: Asset[];
