@@ -8,4 +8,4 @@ SCRIPT_DIR="$(
 )"
 
 set -x
-npx tsx "$SCRIPT_DIR/main.ts" "$@" | less --RAW-CONTROL-CHARS
+npx tsx "$SCRIPT_DIR/main.ts" "$@"
