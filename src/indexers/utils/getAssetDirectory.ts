@@ -1,5 +1,7 @@
 import path from "node:path";
+import {fileURLToPath} from "node:url";
 
 export default function getAssetDirectory(): string {
-    return path.resolve(import.meta.dirname, "../../../assets");
+    const filePath = fileURLToPath(import.meta.url);
+    return path.resolve(filePath, "../../../../assets");
 }
