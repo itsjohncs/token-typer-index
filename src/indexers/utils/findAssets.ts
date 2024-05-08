@@ -1,13 +1,9 @@
-import {promisify} from "util";
-
-import glob_ from "glob";
+import fg from "fast-glob";
 
 import getAssetDirectory from "./getAssetDirectory.js";
 
-const glob = promisify(glob_.glob);
-
 export default function findAssets(pattern: string): Promise<string[]> {
-    return glob(pattern, {
+    return fg.glob(pattern, {
         cwd: getAssetDirectory(),
     });
 }
