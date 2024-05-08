@@ -1,6 +1,6 @@
 import util from "node:util";
 
-import {buildIndex} from "../src/index.js";
+import {buildIndex} from "../token-typer-index-builder/src/index.js";
 
 async function main() {
     const index = await buildIndex();

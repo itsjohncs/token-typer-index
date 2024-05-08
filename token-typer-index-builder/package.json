@@ -1,5 +1,5 @@
 {
-    "name": "token-typer-index",
+    "name": "token-typer-index-builder",
     "version": "0.1.0",
     "main": "index.js",
     "author": "John Sullivan <john@shmeppy.com> (https://johncs.com)",

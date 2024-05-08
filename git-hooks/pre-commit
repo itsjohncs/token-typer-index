@@ -2,6 +2,12 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(
+    cd "$(dirname "${BASH_SOURCE[0]}")"
+    pwd -P
+)"
+ROOT_DIR="$SCRIPT_DIR/.."
+
 mapfile -d "" -t FILES < <(
     git diff --cached --name-only --diff-filter=d -z || kill $$
 )
@@ -13,8 +19,14 @@ fi
 if (git status --porcelain | grep -Eq "^([^? ][^? ])"); then
     echo "Found partially added file. Skipping prettify."
 else
-    npm run prettify
+    (
+        cd "$ROOT_DIR/token-typer-index-builder"
+        npm run prettify
+    )
     git add "${FILES[@]}"
 fi
 
-npm run lint
+(
+    cd "$ROOT_DIR/token-typer-index-builder"
+    npm run lint
+)
