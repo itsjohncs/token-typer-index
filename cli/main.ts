@@ -1,18 +1,25 @@
 import util from "node:util";
 
 import {buildIndex} from "../src/index.js";
-import { createQueryPlan } from "token-typer-index-searcher";
+import { createQueryPlan, executeQueryPlan } from "token-typer-index-searcher";
+
+function print(thing: any): void {
+    console.log(
+        util.inspect(thing, { depth: null, colors: true, maxArrayLength: null }),
+    );
+}
 
 async function main() {
     const index = await buildIndex();
 
     if (process.argv.length <= 1) {
-        console.log(
-            util.inspect(index, {depth: null, colors: true, maxArrayLength: null}),
-        );
+        print(index);
     } else {
         const plan = createQueryPlan(index.tags, process.argv.slice(1).join(" "));
-        console.log(plan);
+        print(plan);
+        
+        const matched = executeQueryPlan(plan, index.assets);
+        print(matched);
     }
 }
 
