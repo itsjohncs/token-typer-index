@@ -1,7 +1,7 @@
 import path from "node:path";
 
 import findAssets from "./utils/findAssets";
-import type Asset from "token-typer-index-searcher/src/Asset";
+import type {Asset} from "@token-typer/index-searcher";
 
 function stripExtension(name: string): string {
     return name.replace(/\.\w+$/, "");

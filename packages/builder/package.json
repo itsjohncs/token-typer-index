@@ -1,5 +1,5 @@
 {
-    "name": "token-typer-index-builder",
+    "name": "@token-typer/index-builder",
     "version": "0.1.0",
     "main": "src/index.ts",
     "author": "John Sullivan <john@shmeppy.com> (https://johncs.com)",
@@ -10,7 +10,7 @@
     },
     "dependencies": {
         "fast-glob": "^3.3.2",
-        "token-typer-index-searcher": "*"
+        "@token-typer/index-searcher": "*"
     },
     "devDependencies": {
         "@eslint/js": "^9.2.0",
