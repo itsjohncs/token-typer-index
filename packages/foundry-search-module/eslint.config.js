@@ -16,6 +16,6 @@ export default tseslint.config(
         },
     },
     {
-        ignores: ["build", "eslint.config.js"],
+        ignores: ["build", "eslint.config.js", "src/libWrapper.d.ts"],
     },
 );
