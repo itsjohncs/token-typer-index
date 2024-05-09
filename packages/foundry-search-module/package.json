@@ -7,7 +7,7 @@
     "scripts": {
         "lint": "eslint . && prettier --list-different .",
         "prettify": "prettier --write .",
-        "build": "tsc && rollup -c"
+        "build": "tsc && rollup -c && ./finalize-build.sh"
     },
     "devDependencies": {
         "@eslint/js": "^9.2.0",

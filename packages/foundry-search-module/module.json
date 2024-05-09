@@ -1,0 +1,12 @@
+{
+    "id": "token-typer-foundry-search-module",
+    "title": "Map & Token Typer",
+    "description": "Asset collection with search.",
+    "authors": [
+        {
+            "name": "John Sullivan"
+        }
+    ],
+    "version": "0.1.0",
+    "esmodules": ["scripts/bundle.js"]
+}
