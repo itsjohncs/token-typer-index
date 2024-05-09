@@ -11,6 +11,7 @@
     },
     "devDependencies": {
         "@eslint/js": "^9.2.0",
+        "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
         "eslint": "^8.57.0",
         "prettier": "^3.2.5",
         "rollup": "^4.17.2",

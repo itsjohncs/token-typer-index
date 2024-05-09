@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "types": ["@league-of-foundry-developers/foundry-vtt-types"],
         "target": "ESNext",
         "module": "Preserve",
         "moduleResolution": "Bundler",
