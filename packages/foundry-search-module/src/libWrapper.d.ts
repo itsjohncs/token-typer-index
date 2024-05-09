@@ -144,7 +144,7 @@ declare class libWrapper {
         package_id: string,
         target: number | string,
         fn: Function,
-        type?: string,
+        type?: "WRAPPER" | "MIXED" | "OVERRIDE",
         options?: {
             chain: boolean;
             perf_mode: string;
