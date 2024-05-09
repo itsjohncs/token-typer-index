@@ -15,7 +15,17 @@ const render: Wrapped<FilePicker["render"]> = function (
     force,
     options,
 ) {
-    log(this._tabs);
+    const sources = this.sources as unknown as Record<
+        string,
+        FilePicker.Source
+    >;
+    sources["token-typer"] = {
+        target: "/",
+        label: "Token Typer",
+        icon: "fas fa-database",
+    };
+
+    log(this.sources);
     return next(force, options);
 };
 
