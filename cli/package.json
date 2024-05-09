@@ -4,5 +4,5 @@
         "@token-typer/index-searcher": "*",
         "@token-typer/index-builder": "*"
     },
-    "workspaces": ["../packages/builder", "../packages/searcher"]
+    "workspaces": ["../packages/index-builder", "../packages/index-searcher"]
 }
