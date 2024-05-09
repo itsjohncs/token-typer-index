@@ -1,13 +1,29 @@
-console.log("Hello World! This code runs immediately when the file is loaded.");
+import packageId from "./packageId";
 
-Hooks.on("init", function () {
-    console.log(
-        "This code runs once the Foundry VTT software begins its initialization workflow.",
-    );
-});
+function log(...args: unknown[]): void {
+    console.log("!!!", ...args);
+}
 
-Hooks.on("ready", function () {
-    console.log(
-        "This code runs once core initialization is ready and game data is available.",
+type Wrapped<T extends (...args: any[]) => any> = (
+    next: T,
+    ...args: Parameters<T>
+) => ReturnType<T>;
+
+const render: Wrapped<FilePicker["render"]> = function (
+    this: FilePicker,
+    next,
+    force,
+    options,
+) {
+    log(this._tabs);
+    return next(force, options);
+};
+
+Hooks.once("init", function () {
+    libWrapper.register(
+        packageId,
+        "FilePicker.prototype.render",
+        render,
+        "WRAPPER",
     );
 });
